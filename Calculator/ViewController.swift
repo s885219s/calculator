@@ -21,9 +21,16 @@ class ViewController: UIViewController {
         self.resetCore()
     }
     
+    var opSignal: Bool = false
+    
     @IBOutlet weak var displayLabel: DisplayLabel!
 
-    @IBAction func numericButtonClicked(sender: UIButton) {
+    @IBAction func numericButtonClicked
+        (sender: UIButton) {
+        if(opSignal){
+            self.displayLabel.clear()
+            opSignal = false
+        }
         if sender.tag >= 1000 && sender.tag < 1010 {
             self.displayLabel.append(sender.tag - 1000)
         } else if sender.tag == 1010 {
@@ -44,11 +51,15 @@ class ViewController: UIViewController {
             try! self.core.addStep(+)
         case "-":
             try! self.core.addStep(-)
+        case "×":
+            try! self.core.addStep(*)
+        case "÷":
+            try! self.core.addStep(/)
         default:
             break
         }
-
-        self.displayLabel.clear()
+        opSignal=true
+        //self.displayLabel.clear()
     }
 
     @IBAction func calculateButtonClicked(sender: UIButton) {
@@ -57,6 +68,12 @@ class ViewController: UIViewController {
         self.resetCore()
     }
 
+    @IBAction func percentButtonClicked(sender: UIButton) {
+        self.displayLabel.percent()
+    }
+    @IBAction func dotBottinClicked(sender: UIButton) {
+        self.displayLabel.decimal()
+    }
     @IBAction func resetButtonClicked(sender: UIButton) {
         self.resetCore()
         self.displayLabel.clear()

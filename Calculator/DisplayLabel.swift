@@ -9,9 +9,9 @@
 import UIKit
 
 class DisplayLabel: UILabel {
-
+    
     // MARK: - Value
-
+    
     var floatValue: Float {
         get {
             if let text = self.text {
@@ -24,11 +24,11 @@ class DisplayLabel: UILabel {
             self.text = (newValue as NSNumber).stringValue
         }
     }
-
+    
     func clear() {
         self.floatValue = 0.0
     }
-
+    
     func append(digit: Int) {
         if let text = self.text where text != "0" {
             self.text = text + "\(digit)"
@@ -36,9 +36,9 @@ class DisplayLabel: UILabel {
             self.text = (digit as NSNumber).stringValue
         }
     }
-
+    
     // MARK: - Negative
-
+    
     var negative: Bool {
         if let text = self.text {
             return text.hasPrefix("-")
@@ -46,12 +46,32 @@ class DisplayLabel: UILabel {
             return false
         }
     }
-
+    var dot: Bool{
+        if let text = self.text{
+            return text.containsString(".")
+        } else{
+            return false
+        }
+    }
+    
     func changeSign() {
         guard let text = self.text else {
             return
         }
         self.text = self.negative ? text.substringFromIndex(text.startIndex.advancedBy(1)) : "-" + text
     }
-
+    func decimal(){
+        guard let text = self.text else{
+            return
+        }
+        if(!self.dot){
+            self.text = text + "."
+        }
+    }
+    func percent(){
+        guard let text = self.text else{
+            return
+        }
+        self.text = String(Float(text)!/100)
+    }
 }

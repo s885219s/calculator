@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -19,11 +19,78 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="W3Z-gj-cFk">
-                                <rect key="frame" x="-4" y="240" width="328" height="328"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="328" placeholderIntrinsicHeight="328" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="W3Z-gj-cFk">
+                                <rect key="frame" x="-4" y="158" width="328" height="410"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sr8-QR-4dm">
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dn6-9v-flS">
                                         <rect key="frame" x="0.0" y="0.0" width="328" height="82"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="1007" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0vq-mK-qjg">
+                                                <rect key="frame" x="0.0" y="0.0" width="82" height="82"/>
+                                                <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="0vq-mK-qjg" secondAttribute="height" multiplier="1:1" priority="750" id="VKw-4m-2c2"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="32"/>
+                                                <state key="normal" title="AC">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="resetButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xsA-Bu-2NE"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="1008" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="swQ-z5-M6d">
+                                                <rect key="frame" x="82" y="0.0" width="82" height="82"/>
+                                                <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="swQ-z5-M6d" secondAttribute="height" multiplier="1:1" priority="750" id="97I-xx-nyz"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="32"/>
+                                                <state key="normal" title="+/-">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="negativeButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ggJ-Ix-dxb"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="1009" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iq3-eu-hoD">
+                                                <rect key="frame" x="164" y="0.0" width="82" height="82"/>
+                                                <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="iq3-eu-hoD" secondAttribute="height" multiplier="1:1" priority="750" id="tT7-jO-sp3"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="32"/>
+                                                <state key="normal" title="%">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="percentButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SSK-Xo-ZJL"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcE-Ir-OXw">
+                                                <rect key="frame" x="246" y="0.0" width="82" height="82"/>
+                                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="tcE-Ir-OXw" secondAttribute="height" multiplier="1:1" priority="750" id="1lB-Tw-iVb"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="32"/>
+                                                <state key="normal" title="÷">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="operatorButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pfB-cR-rfN"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="tcE-Ir-OXw" firstAttribute="width" secondItem="0vq-mK-qjg" secondAttribute="width" id="0Rj-8Y-Fa9"/>
+                                            <constraint firstItem="0vq-mK-qjg" firstAttribute="height" secondItem="Dn6-9v-flS" secondAttribute="height" id="Ht1-DJ-fcG"/>
+                                            <constraint firstItem="iq3-eu-hoD" firstAttribute="width" secondItem="0vq-mK-qjg" secondAttribute="width" id="Voq-Cc-vaf"/>
+                                            <constraint firstItem="swQ-z5-M6d" firstAttribute="width" secondItem="0vq-mK-qjg" secondAttribute="width" id="t1T-eY-exP"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sr8-QR-4dm">
+                                        <rect key="frame" x="0.0" y="82" width="328" height="82"/>
                                         <subviews>
                                             <button opaque="NO" tag="1007" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AXB-rC-lwe">
                                                 <rect key="frame" x="0.0" y="0.0" width="82" height="82"/>
@@ -73,12 +140,12 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="tZB-Pv-2kB" secondAttribute="height" multiplier="1:1" priority="750" id="olR-SR-FkK"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="24"/>
-                                                <state key="normal" title="AC">
+                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="32"/>
+                                                <state key="normal" title="×">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="resetButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JbD-PY-JuC"/>
+                                                    <action selector="operatorButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gQm-px-aMe"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -90,7 +157,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Unb-8D-ma5">
-                                        <rect key="frame" x="0.0" y="82" width="328" height="82"/>
+                                        <rect key="frame" x="0.0" y="164" width="328" height="82"/>
                                         <subviews>
                                             <button opaque="NO" tag="1004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XMn-af-Ihk">
                                                 <rect key="frame" x="0.0" y="0.0" width="82" height="82"/>
@@ -157,7 +224,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pbh-AR-Jsb">
-                                        <rect key="frame" x="0.0" y="164" width="328" height="82"/>
+                                        <rect key="frame" x="0.0" y="246" width="328" height="82"/>
                                         <subviews>
                                             <button opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rvO-aG-llH">
                                                 <rect key="frame" x="0.0" y="0.0" width="82" height="82"/>
@@ -227,7 +294,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tb6-sx-iy2">
-                                        <rect key="frame" x="0.0" y="246" width="328" height="82"/>
+                                        <rect key="frame" x="0.0" y="328" width="328" height="82"/>
                                         <subviews>
                                             <button opaque="NO" tag="1000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lpd-eL-QrV">
                                                 <rect key="frame" x="0.0" y="0.0" width="82" height="82"/>
@@ -264,11 +331,11 @@
                                                     <constraint firstAttribute="width" secondItem="XOc-0a-VZ0" secondAttribute="height" multiplier="1:1" priority="750" id="k1G-Jz-EUU"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="32"/>
-                                                <state key="normal" title="+/-">
+                                                <state key="normal" title=".">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="negativeButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dqf-IE-2Gl"/>
+                                                    <action selector="dotBottinClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d26-G4-bM9"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OSv-A6-hFn">
@@ -296,7 +363,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="g0T-Cj-WfR" customClass="DisplayLabel" customModule="Calculator" customModuleProvider="target">
-                                <rect key="frame" x="16" y="160" width="288" height="64"/>
+                                <rect key="frame" x="16" y="78" width="288" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="fwI-NP-yzH"/>
                                 </constraints>
